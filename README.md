@@ -6,27 +6,11 @@
 **LinkedIn:** [linkedin.com/in/huynguyen0257](https://www.linkedin.com/in/huynguyen0257/)
 
 ## Skills
-**Advanced:**
-- NodeJS (TypeScript)
-- REST APIs
-- Microservices
-- Big Data
-
-**Languages:**
-- SQL
-- Python
-
-**Tools:**
-- GitHub
-- Docker
-- K8s
-- Cloud (GCP, Azure, AWS)
-- RabbitMQ
-- Kafka
-
-**Databases:**
-- RDBMS (MSSQL, Postgres, Citus, Hive)
-- NoSQL (MongoDB, Redis, HBase)
+| Category      | Skills                                                     |
+|---------------|------------------------------------------------------------|
+| **Advanced**  | NodeJS (TypeScript), REST APIs, Microservices, Big Data    |
+| **Languages** | SQL, Python                                                |
+| **Tools**     | GitHub, Docker, K8s, Cloud (GCP, Azure, AWS), RabbitMQ, Kafka |
 
 ## Work Experience
 
