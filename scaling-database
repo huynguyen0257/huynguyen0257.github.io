@@ -1,0 +1,26 @@
+My Experience with Database Scaling
+As I ventured into the realm of big data, I had the opportunity to delve deep into SQL and database scaling techniques. Today, I'd like to share some insights into the seven popular methods for scaling databases that I've encountered and applied in various projects.
+
+1. Indexing
+Indexing is one of the foundational techniques for optimizing database performance. By creating indexes on primary keys and other unique columns, we can significantly speed up query execution. This method is particularly effective for improving read operations, as it reduces the amount of data the database engine needs to scan. I've found indexing indispensable in resolving initial performance issues and continue to rely on it alongside other techniques.
+
+2. Materialized Views
+Materialized views are precomputed data sets that store the results of complex queries, which can be refreshed at specified intervals. I have used materialized views extensively for report dashboards that involve large datasets. This approach helps balance performance benefits with the need to keep the data up-to-date, especially for infrequently changing data. However, it's crucial to manage the refresh times carefully to avoid stressing the database while maximizing performance gains.
+
+3. Denormalization
+Denormalization involves combining related tables to reduce the number of joins needed in queries, thus improving performance. However, this method can complicate data consistency and integrity, so it's important to weigh the benefits against the potential challenges. In my experience, I have rarely used this technique due to the effort required to maintain consistency with the raw tables.
+
+4. Data Caching
+In our projects, we use Redis for caching API responses, which dramatically improves performance by reducing database load. Caching is best applied to frequently accessed or common data, but it's crucial to avoid caching large datasets due to the high cost of RAM. Proper cache invalidation strategies are also necessary to maintain data accuracy. This technique was one of the first scaling strategies we adopted after indexing, and it has proven highly effective.
+
+5. Vertical Scaling
+Vertical scaling, or scaling up, involves adding more resources to a single database server. This was our initial approach to handling increasing loads, as it requires minimal code changes. However, this method can become prohibitively expensive and does not address issues like server failure. At one point, the costs exceeded five thousand dollars per month, prompting us to seek alternative solutions. It served as a temporary measure to ensure a good user experience while we planned for more scalable options.
+
+6. Replication
+Replication involves creating copies of the database, which can be used to distribute read loads across multiple servers. There are synchronous and asynchronous replication methods, each with its trade-offs in terms of consistency and performance. We currently use replication in our data warehouse to handle large volumes of read queries efficiently. It's a reliable solution, though it requires careful management to balance performance and consistency.
+
+7. Sharding
+Sharding, or horizontal partitioning, is the process of splitting data across multiple databases to distribute the load. This technique is particularly beneficial for managing large datasets, such as in a Data Lake architecture where historical data needs to be stored and queried efficiently. I've implemented sharding to manage both Bronze and Silver data in our Delta Lake model, which has significantly improved read and write performance. However, designing shard tables to optimize query performance requires a high level of expertise and can introduce maintenance challenges.
+
+In addition to these methods, I am continually exploring new database technologies that enhance performance, particularly for time series and historical data warehouses.
+
